@@ -73,14 +73,13 @@ When this condition is satisfied, the short-rate process remains strictly positi
 - Supports analytical zero-coupon bond pricing
 
 The comparison shows how changing the diffusion process can significantly affect the statistical behavior of modeled interest rates.
-
 ## Fixed-Income Valuation
 
-Both Vasicek and CIR are **short-rate models**, where the instantaneous interest rate $r_t$ drives the evolution of the term structure.
+Both Vasicek and CIR are **short-rate models**, where the instantaneous interest rate `r_t` drives the evolution of the term structure.
 
-The price of a zero-coupon bond maturing at time $T$ can be expressed under the risk-neutral measure as
+The price of a zero-coupon bond maturing at time `T` can be expressed under the risk-neutral measure as:
 
-$$
+```math
 P(t,T)
 =
 \mathbb{E}^{\mathbb{Q}}
@@ -90,28 +89,27 @@ P(t,T)
 \right)
 \middle|
 \mathcal{F}_t
-\right].
-$$
+\right]
+```
 
 Here:
 
-- $P(t,T)$ is the bond price at time $t$
-- $T$ is the maturity date
-- $r_s$ is the short-rate process
-- $\mathbb{Q}$ is the risk-neutral probability measure
-- $\mathcal{F}_t$ represents the information available at time $t$
+- `P(t,T)` is the bond price at time `t`
+- `T` is the maturity date
+- `r_s` is the short-rate process
+- `Q` is the risk-neutral probability measure
+- `F_t` represents the information available at time `t`
 
-For affine short-rate models such as Vasicek and CIR, zero-coupon bond prices can be written in the form
+For affine short-rate models such as Vasicek and CIR, zero-coupon bond prices can be written as:
 
-$$
-P(t,T)
-=
-A(t,T)e^{-B(t,T)r_t}.
-$$
+```math
+P(t,T) = A(t,T)e^{-B(t,T)r_t}
+```
 
-The functions $A(t,T)$ and $B(t,T)$ depend on the parameters of the underlying short-rate model.
+The functions `A(t,T)` and `B(t,T)` depend on the parameters of the underlying short-rate model.
 
 This affine structure allows interest-rate dynamics to be connected directly to the valuation of fixed-income securities.
+
 
 ## Technical Focus
 
